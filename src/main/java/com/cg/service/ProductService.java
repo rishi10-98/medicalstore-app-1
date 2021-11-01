@@ -26,4 +26,9 @@ public class ProductService {
 			LOG.info("getAllProduct");
 			return productRepo.findAll();
 		}
+
+
+		public Product addMedicine(Product product) {
+			return productRepo.save(product);
+		}
 }
