@@ -1,5 +1,7 @@
 package com.cg.App.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,14 +23,20 @@ public class Product {
 	private long batchNo;
 	@Column(name = "mfgName", nullable = false, length = 255)
 	private String manufacturerName;
-	//add date of packing and expiry date
-	public Product(long productId, String prodName, double price, long batchNo, String manufacturerName) {
+	@Column(name="mfgDate")
+	private Date mfgDate;
+	@Column (name ="expDate")
+	private Date expdate;
+	public Product(long productId, String prodName, double price, long batchNo, String manufacturerName, Date mfgDate,
+			Date expdate) {
 		super();
 		this.productId = productId;
 		this.prodName = prodName;
 		this.price = price;
 		this.batchNo = batchNo;
 		this.manufacturerName = manufacturerName;
+		this.mfgDate = mfgDate;
+		this.expdate = expdate;
 	}
 	public long getProductId() {
 		return productId;
@@ -60,10 +68,23 @@ public class Product {
 	public void setManufacturerName(String manufacturerName) {
 		this.manufacturerName = manufacturerName;
 	}
+	public Date getMfgDate() {
+		return mfgDate;
+	}
+	public void setMfgDate(Date mfgDate) {
+		this.mfgDate = mfgDate;
+	}
+	public Date getExpdate() {
+		return expdate;
+	}
+	public void setExpdate(Date expdate) {
+		this.expdate = expdate;
+	}
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", prodName=" + prodName + ", price=" + price + ", batchNo="
-				+ batchNo + ", manufacturerName=" + manufacturerName + "]";
+				+ batchNo + ", manufacturerName=" + manufacturerName + ", mfgDate=" + mfgDate + ", expdate=" + expdate
+				+ "]";
 	}
 	
 	
