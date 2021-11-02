@@ -30,6 +30,7 @@ import com.cg.App.service.ProductService;
 //@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/")
 
+
 @RestController
 public class ProductController {
 	private static final Logger LOG = LoggerFactory.getLogger(ProductController.class);
@@ -37,7 +38,10 @@ public class ProductController {
 ProductService productService;
 
 //get list of all, medicine
-
+@GetMapping("/")
+public void Home() {
+	System.out.println("welcome to medstore app");
+}
 
 @GetMapping("/getallproduct")
 public Page <Product>getAll(@RequestParam int pageSize, @RequestParam(required = false , defaultValue = "0") int pageNumber){
