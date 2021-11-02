@@ -1,4 +1,4 @@
-package com.cg.model;
+package com.cg.App.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

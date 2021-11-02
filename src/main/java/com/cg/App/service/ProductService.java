@@ -1,4 +1,4 @@
-package com.cg.service;
+package com.cg.App.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.model.Product;
-import com.cg.repository.ProductRepository;
+import com.cg.App.model.Product;
+import com.cg.App.repository.ProductRepository;
 
 
 

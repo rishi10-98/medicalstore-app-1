@@ -1,4 +1,4 @@
-package com.cg.controller;
+package com.cg.App.controller;
 
 import java.util.List;
 
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.model.Product;
-import com.cg.service.ProductService;
+import com.cg.App.model.Product;
+import com.cg.App.service.ProductService;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api")
 
 @RestController
