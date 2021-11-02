@@ -27,6 +27,12 @@ public class Product {
 	private Date mfgDate;
 	@Column (name ="expDate")
 	private Date expdate;
+	
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Product(long productId, String prodName, double price, long batchNo, String manufacturerName, Date mfgDate,
 			Date expdate) {
 		super();
@@ -38,6 +44,7 @@ public class Product {
 		this.mfgDate = mfgDate;
 		this.expdate = expdate;
 	}
+	
 	public long getProductId() {
 		return productId;
 	}

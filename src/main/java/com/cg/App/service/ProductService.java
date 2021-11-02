@@ -2,6 +2,7 @@ package com.cg.App.service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,14 +27,31 @@ public class ProductService {
 	// Get All Employee
 	
 // pagination added 
-		public Page <Product> getAllProduct(int pageNumber, int pagesize) {
-			Pageable page = PageRequest.of(pageNumber, pagesize);
-			LOG.info("getAllProduct");
-			return productRepo.findAll(page);
-		}
+	public Page<Product> getallmedicines(int pageNumber, int pageSize) {
+		Pageable page = PageRequest.of(pageNumber, pageSize);
+		
+		return productRepo.findAll(page);
+	}
 
-
+     // Add product to stock 
 		public Product addMedicine(Product product) {
 			return productRepo.save(product);
 		}
+
+		public Optional<Product> findwithId(Long id) {
+			return productRepo.findById(id);
+		}
+
+		public Long removeMedicine(Long id) {
+			productRepo.deleteById(id);
+			return id;
+		}
+
+		public List<Product> getallmedicines() {
+			return productRepo.findAll();
+		}
+
+		
+
+		
 }
