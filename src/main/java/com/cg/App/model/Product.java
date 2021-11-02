@@ -26,7 +26,7 @@ public class Product {
 	@Column(name="mfgDate")
 	private Date mfgDate;
 	@Column (name ="expDate")
-	private Date expdate;
+	private Date expDate;
 	
 	public Product() {
 		super();
@@ -42,7 +42,7 @@ public class Product {
 		this.batchNo = batchNo;
 		this.manufacturerName = manufacturerName;
 		this.mfgDate = mfgDate;
-		this.expdate = expdate;
+		this.expDate = expdate;
 	}
 	
 	public long getProductId() {
@@ -82,15 +82,15 @@ public class Product {
 		this.mfgDate = mfgDate;
 	}
 	public Date getExpdate() {
-		return expdate;
+		return expDate;
 	}
 	public void setExpdate(Date expdate) {
-		this.expdate = expdate;
+		this.expDate = expdate;
 	}
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", prodName=" + prodName + ", price=" + price + ", batchNo="
-				+ batchNo + ", manufacturerName=" + manufacturerName + ", mfgDate=" + mfgDate + ", expdate=" + expdate
+				+ batchNo + ", manufacturerName=" + manufacturerName + ", mfgDate=" + mfgDate + ", expdate=" + expDate
 				+ "]";
 	}
 	
