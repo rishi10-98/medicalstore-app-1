@@ -17,6 +17,7 @@ public class MedStoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MedStoreApplication.class, args);
 	}
+	// comment added for trial
 
 //	@Bean
 //	 CommandLineRunner run(ProductRepository productrepository){
