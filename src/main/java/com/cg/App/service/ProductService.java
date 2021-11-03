@@ -41,16 +41,26 @@ public class ProductService {
 		public Optional<Product> findwithId(Long id) {
 			return productRepo.findById(id);
 		}
-
+//remove product
 		public Long removeMedicine(Long id) {
 			productRepo.deleteById(id);
 			return id;
 		}
-
+//view all medicine
 		public List<Product> getallmedicines() {
 			return productRepo.findAll();
 		}
-
+//searching the product
+		public List<Product> Searchproduct(String keyword){
+			LOG.info(keyword);
+			if (keyword != null) {
+				
+				return productRepo.Search(keyword);
+        }
+			else
+				return productRepo.findAll();
+			
+		}
 		
 
 		

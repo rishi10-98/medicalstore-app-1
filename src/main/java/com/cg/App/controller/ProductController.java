@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -79,5 +80,11 @@ public ResponseEntity<Product> updateMedicine(@PathVariable Long id,@RequestBody
 	Product updatedProduct = productService.addMedicine(newProduct);
 	return ResponseEntity.ok(updatedProduct);
 	
+}
+@GetMapping("/search")
+//searching medicine 
+public List<Product> Searchmedicine(@Param(value = "keyword") String Keyword){
+	LOG.info("searching keyword");
+	return productService.Searchproduct(Keyword);
 }
 }
