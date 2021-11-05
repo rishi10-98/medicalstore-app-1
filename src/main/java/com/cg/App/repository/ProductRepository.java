@@ -11,6 +11,6 @@ import com.cg.App.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product ,Long>{
 //searching query
-	@Query(value= "SELECTp FROM PRODUCT p WHERE p.prod_name LIKE %:keyword% OR p.mfg_name LIKE %:keyword%" , nativeQuery = true)
+	@Query(value= "SELECT*FROM product p WHERE p.prod_name LIKE %?1% OR p.mfg_name LIKE %?1%" , nativeQuery = true)
 	public List<Product> Search(@Param("keyword") String keyword);
 }

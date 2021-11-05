@@ -55,10 +55,13 @@ public class ProductService {
 			LOG.info(keyword);
 			if (keyword != null) {
 				
-				return productRepo.Search(keyword);
+				List<Product>result=productRepo.Search(keyword);
+				
+				return result;
         }
 			else
 				return productRepo.findAll();
+			
 			
 		}
 		

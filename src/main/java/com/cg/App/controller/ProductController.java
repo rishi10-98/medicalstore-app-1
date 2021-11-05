@@ -83,8 +83,8 @@ public ResponseEntity<Product> updateMedicine(@PathVariable Long id,@RequestBody
 }
 @GetMapping("/search")
 //searching medicine 
-public List<Product> Searchmedicine(@Param(value = "keyword") String Keyword){
+public List<Product> Searchmedicine(String keyword){
 	LOG.info("searching keyword");
-	return productService.Searchproduct(Keyword);
+	return productService.Searchproduct(keyword);
 }
 }
