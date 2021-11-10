@@ -22,7 +22,7 @@ import com.cg.App.service.ClientService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/client")
 public class ClientController {
 	@Autowired
