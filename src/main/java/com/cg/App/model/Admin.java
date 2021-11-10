@@ -13,11 +13,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 
-@Data
 
-@AllArgsConstructor
-
-@NoArgsConstructor
 
 @Table(name = "ADMIN")
 
@@ -37,4 +33,56 @@ private String userName;
 
 @Column(name="PASSWORD") 
 private String password;
+
+
+public Admin() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+public Admin(Integer aId, String aName, String userName, String password) {
+	super();
+	this.aId = aId;
+	this.aName = aName;
+	this.userName = userName;
+	this.password = password;
+}
+
+public Integer getaId() {
+	return aId;
+}
+
+public void setaId(Integer aId) {
+	this.aId = aId;
+}
+
+public String getaName() {
+	return aName;
+}
+
+public void setaName(String aName) {
+	this.aName = aName;
+}
+
+public String getUserName() {
+	return userName;
+}
+
+public void setUserName(String userName) {
+	this.userName = userName;
+}
+
+public String getPassword() {
+	return password;
+}
+
+public void setPassword(String password) {
+	this.password = password;
+}
+
+@Override
+public String toString() {
+	return "Admin [aId=" + aId + ", aName=" + aName + ", userName=" + userName + ", password=" + password + "]";
+}
+
 }
