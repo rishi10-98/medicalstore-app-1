@@ -13,11 +13,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 
-//@Data
-//
-//@AllArgsConstructor
-//
-//@NoArgsConstructor
+
 
 @Table(name = "ADMIN")
 
@@ -37,6 +33,7 @@ private String userName;
 
 @Column(name="PASSWORD") 
 private String password;
+
 
 public Admin() {
 	super();
@@ -87,6 +84,5 @@ public void setPassword(String password) {
 public String toString() {
 	return "Admin [aId=" + aId + ", aName=" + aName + ", userName=" + userName + ", password=" + password + "]";
 }
-
 
 }
