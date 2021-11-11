@@ -11,7 +11,10 @@ import org.springframework.context.annotation.Bean;
 import com.cg.App.model.Product;
 import com.cg.App.repository.ProductRepository;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @SpringBootApplication
+@EnableSwagger2
 public class MedStoreApplication {
 
 	public static void main(String[] args) {

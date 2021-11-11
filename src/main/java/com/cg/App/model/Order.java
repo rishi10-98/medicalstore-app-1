@@ -1,99 +1,76 @@
 package com.cg.App.model;
 
 
-import javax.persistence.Column;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-@Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "ORDER_DETAILS")
 
+@Entity
+@Table(name = "ORDER_DETAILS")
 public class Order{
 
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 private Long orderId;
 
-@Column(name="PRODUCT_ID")
-private Long productId;
+@OneToMany(targetEntity=Product.class,cascade=CascadeType.ALL)
+@JoinColumn(name="oid_fk",referencedColumnName="orderId")
+private List<Product> product;
 
-@Column(name="ORDERED_QUANTITY")
-private Integer orderedQuantity;
-
-@Column(name="PRICE")
-private Float price;
-
-@Column (name="DEALER_ID")
-private Long dealerId;
+@OneToOne(targetEntity=Dealer.class,cascade=CascadeType.ALL)
+@JoinColumn(name="oid_fk",referencedColumnName="dealerId")
+private Dealer dealer;
 
 public Order() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	super();
+	// TODO Auto-generated constructor stub
+}
 
-	public Order(Long orderId, Long productId, Float price, Integer orderedQuantity, Long dealerId) {
-		super();
-		this.orderId = orderId;
-		this.productId = productId;
-		this.price = price;
-		this.orderedQuantity = orderedQuantity;
-		this.dealerId = dealerId;
-	}
+public Order(Long orderId, List<Product> product, Dealer dealer) {
+	super();
+	this.orderId = orderId;
+	this.product = product;
+	this.dealer = dealer;
+}
 
-	public Long getOrderId() {
-		return orderId;
-	}
+public Long getOrderId() {
+	return orderId;
+}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
+public void setOrderId(Long orderId) {
+	this.orderId = orderId;
+}
 
-	public Long getProductId() {
-		return productId;
-	}
+public List<Product> getProduct() {
+	return product;
+}
 
-	public void setProductId(Long productId) {
-		this.productId = productId;
-	}
+public void setProduct(List<Product> product) {
+	this.product = product;
+}
 
-	public Float getPrice() {
-		return price;
-	}
+public Dealer getDealer() {
+	return dealer;
+}
 
-	public void setPrice(Float price) {
-		this.price = price;
-	}
+public void setDealer(Dealer dealer) {
+	this.dealer = dealer;
+}
 
-	public Integer getOrderedQuantity() {
-		return orderedQuantity;
-	}
+@Override
+public String toString() {
+	return "Order [orderId=" + orderId + ", product=" + product + ", dealer=" + dealer + "]";
+}
 
-	public void setOrderedQuantity(Integer orderedQuantity) {
-		this.orderedQuantity = orderedQuantity;
-	}
 
-	public Long getDealerId() {
-		return dealerId;
-	}
 
-	public void setDealerId(Long dealerId) {
-		this.dealerId = dealerId;
-	}
-
-	@Override
-	public String toString() {
-		return "Order [orderId=" + orderId + ", productId=" + productId + ", price=" + price + ", orderedQuantity="
-				+ orderedQuantity + ", dealerId=" + dealerId + "]";
-	}	
-	
 
 }
 
