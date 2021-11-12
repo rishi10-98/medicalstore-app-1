@@ -55,7 +55,7 @@ public Product addProduct(@RequestBody Product product) {
 	return productService.addMedicine(product);
 }
 // delete product 
-@DeleteMapping("/deleteMedicine/{id}")
+@DeleteMapping("/deleteproduct/{id}")
 public Long deleteMedicine (@PathVariable Long id) {
 	LOG.info("deleting product");
 	return productService.removeMedicine(id);

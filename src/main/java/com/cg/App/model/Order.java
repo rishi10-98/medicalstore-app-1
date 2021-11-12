@@ -13,10 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-// <<<<<<< HEAD
-// =======
 
-// >>>>>>> d84ba8110f9e1b98fba5d23e44cf70eb4b2778b4
 @Table(name = "ORDER_DETAILS")
 public class Order{
 
