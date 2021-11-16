@@ -44,9 +44,13 @@ public void Home() {
 	System.out.println("welcome to medstore app");
 }
 
+//@GetMapping("/getallproduct")
+//public Page <Product>getAll(@RequestParam int pageSize, @RequestParam(required = false , defaultValue = "0") int pageNumber){
+//	return productService.getallmedicines(pageNumber,pageSize);
+//}
 @GetMapping("/getallproduct")
-public Page <Product>getAll(@RequestParam int pageSize, @RequestParam(required = false , defaultValue = "0") int pageNumber){
-	return productService.getallmedicines(pageNumber,pageSize);
+public List<Product>getAll(){
+	return productService.getallmedicines();
 }
 //add medicine to database
 @PostMapping("/AddProduct")

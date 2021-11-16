@@ -27,11 +27,11 @@ public class ProductService {
 	// Get All Employee
 	
 // pagination added 
-	public Page<Product> getallmedicines(int pageNumber, int pageSize) {
-		Pageable page = PageRequest.of(pageNumber, pageSize);
-		
-		return productRepo.findAll(page);
-	}
+//	public Page<Product> getallmedicines(int pageNumber, int pageSize) {
+//		Pageable page = PageRequest.of(pageNumber, pageSize);
+//		
+//		return productRepo.findAll(page);
+//	}
 
      // Add product to stock 
 		public Product addMedicine(Product product) {
@@ -48,7 +48,7 @@ public class ProductService {
 		}
 //view all medicine
 		public List<Product> getallmedicines() {
-			return productRepo.findAll();
+			return productRepo.findAllByOrderByProductIdAsc();
 		}
 //searching the product
 		public List<Product> Searchproduct(String keyword){

@@ -13,4 +13,6 @@ public interface ProductRepository extends JpaRepository<Product ,Long>{
 //searching query
 	@Query(value= "SELECT*FROM product p WHERE p.prod_name LIKE %?1% OR p.mfg_name LIKE %?1%" , nativeQuery = true)
 	public List<Product> Search(@Param("keyword") String keyword);
+
+    public abstract List<Product> findAllByOrderByProductIdAsc();
 }
