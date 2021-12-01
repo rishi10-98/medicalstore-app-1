@@ -9,18 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.cg.App.controller.Hello;
 
 @SpringBootTest(classes = MedStoreApplication.class)
-//@WebMvcTest(Hello.class)
+
 class MedStoreApplicationTests {
 
-//	@Test
-//	void contextLoads() {
-//	}
 	@Test
-	public void testHello() {
-		Hello hello = new Hello();
-		String expected = "Hello world!";
-		String output = hello.hello();
-		assertEquals(expected, output);
+	void contextLoads() {
 	}
+	
 
 }
