@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cg.App.exception.MyDealerException;
@@ -48,6 +49,13 @@ public class DealerService implements IDealerService {
 		 dealerRepository.deleteById(dealerId);
 		
 	}
-
+	@Override
+	public Dealer updateDealer(Dealer dealer, Long dealerId) throws MyDealerException {
+	logger.info("Trying to update Dealer in service layer ");
+	Optional<Dealer> dealerFound = getDealerById(dealerId);
+	Dealer exRecord=dealerRepository.getOne(dealerId);
+	BeanUtils.copyProperties(dealer, exRecord,"dealerId");
+	return dealerRepository.save(exRecord);
+	}
 
 }

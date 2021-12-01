@@ -24,7 +24,7 @@ public class MedStoreApplication {
 
 //	@Bean
 //	 CommandLineRunner run(ProductRepository productrepository){
-//		return args -> IntStream.rangeClosed(1, 20).forEach(i->{
+//		return args -> IntStream.rangeClosed(1, 5).forEach(i->{
 //			Product product = new Product();
 //			product.setBatchNo(i+100);
 //			product.setExpdate(Date.valueOf("2021-02-"+i));
@@ -35,5 +35,6 @@ public class MedStoreApplication {
 //			productrepository.save(product);
 //		});
 //	}
-		
 	}
+		
+	

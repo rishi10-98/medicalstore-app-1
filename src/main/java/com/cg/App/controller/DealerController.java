@@ -8,10 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +23,7 @@ import com.cg.App.service.IDealerService;
 
 
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController//combinatin of @Controller and @ResponseBody
 //contoller return  view and restcontroller return response body
 @RequestMapping(value="/dealer")
@@ -114,5 +116,29 @@ public class DealerController {
 		                return new ResponseEntity<>("Record not found with id : "+dealerId,HttpStatus.EXPECTATION_FAILED);
 		            }
 		        }
-		 
+		        @PutMapping("/update/{dealerId}")
+		        public ResponseEntity<Object> updateDealer(@RequestBody Dealer dealer, @PathVariable Long dealerId)
+		        throws DealerNotFoundException {
+		        logger.info("trying to update Dealer : " + dealer);
+		        try {
+		        Optional<Dealer> dealerFound = dealerService.getDealerById(dealerId);
+
+
+
+		        if (dealerFound.isPresent()) {
+		        dealerService.updateDealer(dealer,dealerId);
+		        System.out.println("Record Updated : " + dealer);
+		        return ResponseEntity.ok(dealer);
+		        } else {
+		        return new ResponseEntity<>("Record NOT updated with Id : " + dealer,HttpStatus.NO_CONTENT);
+		        }
+		        } catch (Exception e) {
+		        logger.error("Record NOT updated with Id : " + dealer);
+		        return new ResponseEntity<>("Record NOT updated with Id : " + dealer, HttpStatus.EXPECTATION_FAILED);
+		        }
+
+
+
+		        }
+		        
 }

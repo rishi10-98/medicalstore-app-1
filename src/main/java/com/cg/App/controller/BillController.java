@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.cg.App.model.Bill;
 import com.cg.App.model.Product;
 import com.cg.App.service.BillService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController//combinatin of @Controller and @ResponseBody
 //contoller return  view and restcontroller return response body
 @RequestMapping(value="/bill")

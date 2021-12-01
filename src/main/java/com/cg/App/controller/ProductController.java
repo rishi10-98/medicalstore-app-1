@@ -28,7 +28,7 @@ import com.cg.App.repository.ProductRepository;
 import com.cg.App.service.ProductService;
 
 
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/")
 
 

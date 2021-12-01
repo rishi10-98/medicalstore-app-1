@@ -15,5 +15,9 @@ public interface IDealerService {
 	public List<Dealer> getDealerList()throws MyDealerException;
 	public Optional<Dealer> getDealerById(Long dealerId) throws MyDealerException;
 	public void delete(Long dealerId)throws MyDealerException;
+
+	public Dealer updateDealer(Dealer dealer, Long dealerId)throws MyDealerException;
+
+
 	
 }

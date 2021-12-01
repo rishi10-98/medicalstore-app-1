@@ -20,7 +20,7 @@ import com.cg.App.model.Product;
 import com.cg.App.service.ClientService;
 
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 //@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/client")
