@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
@@ -12,7 +13,7 @@ import com.cg.App.model.Product;
 import com.cg.App.repository.ProductRepository;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
+@EnableAutoConfiguration
 @SpringBootApplication
 @EnableSwagger2
 public class MedStoreApplication {
