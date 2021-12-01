@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.cg.App.controller.Hello;
 
 @SpringBootTest
-
+@WebMvcTest(Hello.class)
 class DemoApplicationTests {
 
 //	@Test
