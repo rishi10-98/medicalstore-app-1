@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.cg.App.controller.Hello;
 
-@SpringBootTest
+@SpringBootTest(classes = MedStoreApplication.class)
 //@WebMvcTest(Hello.class)
 class MedStoreApplicationTests {
 
