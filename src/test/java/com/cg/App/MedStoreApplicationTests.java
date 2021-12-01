@@ -10,7 +10,7 @@ import com.cg.App.controller.Hello;
 
 @SpringBootTest
 @WebMvcTest(Hello.class)
-class DemoApplicationTests {
+class MedStoreApplicationTests {
 
 //	@Test
 //	void contextLoads() {
