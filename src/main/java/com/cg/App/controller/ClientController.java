@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.App.exception.ClientNotFoundException;
 import com.cg.App.exception.ResourceNotFoundException;
 import com.cg.App.model.Admin;
 import com.cg.App.model.Client;
@@ -26,7 +25,6 @@ import com.cg.App.model.Product;
 import com.cg.App.service.ClientService;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/client")
@@ -44,7 +42,7 @@ public class ClientController {
 	//handler method to handle list of clients and return mode and view
 	
 	@GetMapping("/clients")
-	public ResponseEntity<List<Client>> listClient() throws ClientNotFoundException {
+	public ResponseEntity<List<Client>> listClient()  {
 		try {
 		logger.info("Trying to fetch Ward Report list ");
 		
@@ -71,7 +69,7 @@ public class ClientController {
 	
 	// delete client 
 	@DeleteMapping("/deleteClient/{id}")
-	public ResponseEntity<String> deleteClient (@PathVariable Long id) throws ClientNotFoundException{
+	public ResponseEntity<String> deleteClient (@PathVariable Long id) {
 		try {
 			clientService.removeClient(id);
 		 logger.info("Record Deleted with Id : " +id);
@@ -87,7 +85,7 @@ public class ClientController {
 	
 	//get client by id 
 	@GetMapping("/getbyid/{id}")
-	public ResponseEntity<Client> getClientById(@PathVariable Long id) throws ClientNotFoundException{
+	public ResponseEntity<Client> getClientById(@PathVariable Long id) {
 		Optional<Client> admin = null;
 		logger.info("Trying to search Record with Id : " + id);
 		try {
@@ -101,7 +99,7 @@ public class ClientController {
 
 	//updating Data
 	@PutMapping("/updateClient/{id}")
-	public ResponseEntity<Client> updateClient(@PathVariable Long id,@RequestBody Client newClient) throws ClientNotFoundException{
+	public ResponseEntity<Client> updateClient(@PathVariable Long id,@RequestBody Client newClient) {
 		logger.info("Trying to add Record  : " + newClient);
 		try {
 		Client currentClient = clientService.findwithId(id)
