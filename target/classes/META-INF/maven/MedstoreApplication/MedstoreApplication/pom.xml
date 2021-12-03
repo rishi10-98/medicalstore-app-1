@@ -91,7 +91,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>medstoreapp-Docker</finalName>
+		<finalName>medstoreapp-docker</finalName>
 	</build>
 
 </project>
