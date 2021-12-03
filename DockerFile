@@ -1,4 +1,4 @@
 FROM openjdk:8
 EXPOSE 8081
-ADD target/medstore-app.jar medstore-app.jar 
-ENTRYPOINT ["java","-jar","/medstore-app.jar "]
+ADD target/medstoreapp-Docker.jar medstoreapp-Docker.jar 
+ENTRYPOINT ["java","-jar","/medstoreapp-Docker.jar "]
