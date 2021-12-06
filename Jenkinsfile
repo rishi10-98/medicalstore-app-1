@@ -1,6 +1,10 @@
 pipeline{
-agent{label 'master'}
-tools{maven 'Maven'}
+agent{
+label 'master'
+}
+tools{
+maven 'Maven'
+}
 stages{
 stage('Checkout'){
 steps{
