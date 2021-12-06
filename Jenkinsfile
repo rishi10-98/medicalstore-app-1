@@ -1,10 +1,10 @@
 pipeline{
 agent{label 'master'}
-tools{maven 'apache-maven-3.8.4'}
+tools{maven 'apache-maven-3.8.1'}
 stages{
 stage('Checkout'){
 steps{
-git branch: 'main', url: 'https://github.com/AKASHKASAR/Ebugtracker.git'
+git branch: 'main', url: 'https://github.com/pratikkashid/medicalstore-app.git'
 }
 }
 stage('Build'){
